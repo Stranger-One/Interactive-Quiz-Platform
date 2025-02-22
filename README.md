@@ -52,12 +52,32 @@ The Interactive Quiz Platform is a web application built with React and Vite. It
 
 ## Usage
 
-### Running the Project
+### Running the Project Locally
 
-1. **Install Dependencies**: Run `npm install` to install the required dependencies.
-2. **Start the Development Server**: Run `npm run dev` to start the Vite development server.
-3. **Build for Production**: Run `npm run build` to build the project for production.
-4. **Preview the Production Build**: Run `npm run preview` to preview the production build.
+1. **Clone the Repository**:
+
+   ```sh
+   git clone https://github.com/Stranger-One/Interactive-Quiz-Platform
+
+   cd interactive-quiz-platform
+   ```
+
+2. **Install Dependencies**:
+   ```sh
+   npm install
+   ```
+3. **Start the Development Server**:
+   ```sh
+   npm run dev
+   ```
+4. **Build for Production**:
+   ```sh
+   npm run build
+   ```
+5. **Preview the Production Build**:
+   ```sh
+   npm run preview
+   ```
 
 ### Project Structure
 
@@ -66,14 +86,22 @@ The Interactive Quiz Platform is a web application built with React and Vite. It
   /components
     - Quiz.jsx
     - TestHistory.jsx
+    - Header.jsx
+    - SignIn.jsx
+    - SignUp.jsx
+  /context
+    - authContext.jsx
   /database
     - db.js
   /pages
     - Home.jsx
     - QuizTest.jsx
     - ReviewTest.jsx
+    - AuthProtector.jsx
+    - AuthLayout.jsx
   /utils
     - questions.js
+    - password.js
   - App.jsx
   - main.jsx
   - index.css
