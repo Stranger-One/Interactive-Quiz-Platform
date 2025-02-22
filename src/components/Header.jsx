@@ -7,16 +7,16 @@ import toast from "react-hot-toast";
 
 const Header = () => {
   const { user, setUser } = useAuth();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleLogOut = () => {
-    localStorage.removeItem("token")
-    toast.success("Logged out successfully")
-    navigate("/auth/signin")
+    localStorage.removeItem("token");
+    toast.success("Logged out successfully");
+    navigate("/auth/signin");
   };
   return (
-    <div className="w-full px-4 sticky top-0 left-0 md:px-10 py-4 flex items-center justify-between bg-white z-20 shadow">
-      <div className=""></div>
+    <div className="w-full px-4 sticky top-0 left-0 md:px-10 py-4 flex items-center justify-between bg-white z-20 shadow select-none">
+      <div className="text-xl font-bold cursor-pointer select-none" onClick={()=>navigate("/")}>Quizzz</div>
       <div className="flex items-center gap-5">
         <div className="flex items-center gap-2 cursor-pointer">
           <FaUser size={20} />

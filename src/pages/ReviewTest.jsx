@@ -122,8 +122,8 @@ const ReviewTest = () => {
 
   return (
     <div className="w-full h-full bg-gray-100">
-      <div className="min-h-screen flex flex-col items-center py-10 p-4 md:px-10 max-w-2xl mx-auto">
-        <div className="flex items-center justify-between  mb-8 w-full ">
+      <div className="min-h-screen flex flex-col items-center py-4 md:py-10 px-4 md:px-10 max-w-2xl mx-auto">
+        <div className="flex items-center justify-between  mb-4 w-full ">
           <div className="flex items-center justify-center p-2 cursor-pointer border-2 border-gray-700 rounded-full" onClick={() => navigate(-1)}>
             <FaArrowLeft size={20} />
           </div>
@@ -155,7 +155,7 @@ const ReviewTest = () => {
                   </span>
                 </div>
 
-                <h2 className="text-xl font-bold mb-4">{question?.question}</h2>
+                <h2 className="text-xl font-bold mb-4  leading-6">{question?.question}</h2>
 
                 <div className="options space-y-2">
                   {question?.options && question?.options.length > 0 ? (

@@ -11,10 +11,9 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-4 md:px-10">
-      <h1 className="text-4xl font-bold mb-8">Interactive Quiz Platform</h1>
-      <div className="w-full bg-white flex items-center justify-between max-w-2xl p-8 rounded-lg shadow-md">
+      <div className="w-full bg-white flex items-center justify-between max-w-2xl p-4 rounded-lg shadow-md">
         {/* <Quiz onQuizComplete={() => setRefreshHistory(!refreshHistory)} /> */}
-        <h2 className="text-2xl font-semibold mb-4">Start a new quiz</h2>
+        <h2 className="text-2xl font-semibold">Start a new quiz</h2>
         <button
           onClick={() => navigate("/test")}
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 cursor-pointer flex items-center gap-2"
