@@ -19,21 +19,21 @@ const SignIn = () => {
 
         const storedData = await db.userData.toArray();
         const isExistingUser = storedData.filter((user) => user.email === email);
-        console.log({ storedData, isExistingUser });
+        // console.log({ storedData, isExistingUser });
 
         if (isExistingUser.length === 0) {
-            console.log('User does not exist');
+            // console.log('User does not exist');
             toast.error('User credentials not found');
             setLoading(false);
             return;
         }
 
         const isPasswordMatch = comparePassword(password, isExistingUser[0].password);
-        console.log({ isPasswordMatch });
+        // console.log({ isPasswordMatch });
 
         if (!isPasswordMatch) {
             toast.error('User credentials not found');
-            console.log('Invalid password');
+            // console.log('Invalid password');
             setLoading(false);
             return;
         }

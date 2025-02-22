@@ -7,7 +7,7 @@ import { useAuth } from "../contexts/authContext";
 const Home = () => {
   const { user, setUser } = useAuth();
   const navigate = useNavigate();
-  console.log({ user });
+  // console.log({ user });
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-4 md:px-10">

@@ -8,15 +8,15 @@ const ReviewTest = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  useEffect(() => {
-    console.log({ history });
-  }, [history]);
+  // useEffect(() => {
+  //   console.log({ history });
+  // }, [history]);
 
   useEffect(() => {
     const fetchHistory = async () => {
       const data = await db.quizHistory.toArray();
       const thisRecord = data.find((record) => record.id === parseInt(id));
-      console.log({ id, thisRecord });
+      // console.log({ id, thisRecord });
 
       setHistory(thisRecord);
     };

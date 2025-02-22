@@ -34,7 +34,7 @@ const SignUp = () => {
       email,
       password: hashedPassword,
     };
-    console.log({ userData, password, hashedPassword });
+    // console.log({ userData, password, hashedPassword });
 
     await db.userData.add(userData); // Save quiz result and review to the database
     localStorage.setItem("token", `${email}:${fullName}:${hashedPassword}`);

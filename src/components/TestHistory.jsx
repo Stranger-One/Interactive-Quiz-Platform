@@ -14,7 +14,7 @@ const TestHistory = () => {
       const res = await db.quizHistory.toArray() || [];
       const data = res.filter((item) => item.email === user.email);
 
-      console.log({ data });
+      // console.log({ data });
       setHistory(data);
     };
     fetchHistory();

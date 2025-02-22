@@ -18,9 +18,6 @@ const Quiz = () => {
     const inputRef = useRef(null); // Reference to the input element
   const { user, setUser } = useAuth();
 
-    useEffect(() => {
-        console.log(review);
-    }, [review]);
 
     useEffect(() => {
         if (timeLeft === 0) {
