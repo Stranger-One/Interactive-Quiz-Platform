@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { hashPassword } from "../utils/password";
 import db from "../database/db";
 import { useAuth } from "../contexts/authContext";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
   const [fullName, setFullName] = useState("");
@@ -19,11 +20,9 @@ const SignUp = () => {
 
     const isExistingUsers = await db.userData.toArray();
     const isExistingUser = isExistingUsers.filter((user) => user.email === email);
-
-    console.log({ isExistingUsers, isExistingUser });
       
     if (isExistingUser.length > 0) {
-      alert("Email already exists");
+      toast.error("Email already exists");
       setLoading(false);
       return;
     }
@@ -46,7 +45,7 @@ const SignUp = () => {
       isAuthenticated: true,
     })
     
-    alert("Sign Up successful");
+    toast.success("Sign up successful");
 
     setTimeout(() => {
       setLoading(false);

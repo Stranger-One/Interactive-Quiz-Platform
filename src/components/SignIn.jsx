@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import db from '../database/db';
 import { comparePassword } from '../utils/password';
 import { useAuth } from '../contexts/authContext';
+import toast from 'react-hot-toast';
 
 const SignIn = () => {
       const { user, setUser } = useAuth();
@@ -16,18 +17,26 @@ const SignIn = () => {
         setLoading(true);
         // Handle sign-in logic here
 
-        const data = {
-            email,
-            password,
-        }
-        console.log(data);
-
         const storedData = await db.userData.toArray();
         const isExistingUser = storedData.filter((user) => user.email === email);
         console.log({ storedData, isExistingUser });
 
+        if (isExistingUser.length === 0) {
+            console.log('User does not exist');
+            toast.error('User credentials not found');
+            setLoading(false);
+            return;
+        }
+
         const isPasswordMatch = comparePassword(password, isExistingUser[0].password);
         console.log({ isPasswordMatch });
+
+        if (!isPasswordMatch) {
+            toast.error('User credentials not found');
+            console.log('Invalid password');
+            setLoading(false);
+            return;
+        }
 
         localStorage.setItem('token', `${email}:${isExistingUser[0].fullName}:${isExistingUser[0].password}`);
         setUser({
@@ -35,16 +44,9 @@ const SignIn = () => {
             email,
             isAuthenticated: true,
         });
+
+        toast.success('Sign in successful');
         
-        
-
-
-
-
-
-
-        console.log('Email:', email);
-        console.log('Password:', password);
         // Simulate an async operation
         setTimeout(() => {
             setLoading(false);

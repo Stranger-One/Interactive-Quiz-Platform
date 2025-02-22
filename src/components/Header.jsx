@@ -3,6 +3,7 @@ import { FaUser } from "react-icons/fa";
 import { useAuth } from "../contexts/authContext";
 import { MdOutlineLogout } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Header = () => {
   const { user, setUser } = useAuth();
@@ -10,6 +11,7 @@ const Header = () => {
 
   const handleLogOut = () => {
     localStorage.removeItem("token")
+    toast.success("Logged out successfully")
     navigate("/auth/signin")
   };
   return (
